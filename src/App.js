@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "styled-components";
+import Home from "./components/Home";
+import Form from "./components/Form";
+import usePersistedState from "./hooks/usePersistedState";
+import GlobalStyles from './styles/global'
+
+import light from "./themes/light";
+import dark from "./themes/dark";
+import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
+import { useState } from "react";
+
 
 function App() {
+  const [ input, setInput ] = useState("FALOU CAPIVARA")
+  const [ theme, setTheme ] = usePersistedState("Capivara",light) //Aqui só guarda o estado inicial
+
+
+  // Function de Troca
+  const toggleTheme = () => {
+    setTheme(theme.title === "light" ? dark : light);
+  }
+
+  const toggleIcon = theme.title === "light" ? <BsFillMoonFill /> : <BsFillSunFill />
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Home toggleTheme={toggleTheme} icon={toggleIcon} />
+      <Form 
+        input={input}
+        setInput={setInput}
+      />
+      < GlobalStyles/>
+    </ThemeProvider>
+  
   );
 }
 
