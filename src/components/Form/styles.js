@@ -27,7 +27,7 @@ export const FormRoot = styled.form`
     border: none;
     border-radius: .3rem;
     font-size: 1.4rem;
-
+    cursor: pointer;
 
     background: ${props => props.theme.colors.backgroundButton};;
     

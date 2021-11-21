@@ -8,10 +8,14 @@ import light from "./themes/light";
 import dark from "./themes/dark";
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 import { useState } from "react";
+import TodoList from "./components/TodoList";
 
 
 function App() {
-  const [ input, setInput ] = useState("FALOU CAPIVARA")
+  const [ input, setInput ] = useState("")
+  const [ todos, setTodos ] = useState([]) // state das divs que iram aparecer na tela 
+  const [ editTodo, setEditTodo] = useState(null)
+
   const [ theme, setTheme ] = usePersistedState("Capivara",light) //Aqui só guarda o estado inicial
 
 
@@ -28,8 +32,14 @@ function App() {
       <Form 
         input={input}
         setInput={setInput}
+        todos={todos}
+        setTodos={setTodos}
+        editTodo={editTodo}
+        setEditTodo={setEditTodo}
       />
       < GlobalStyles/>
+
+      <TodoList todos={todos} setTodos={setTodos} setEditTodo={setEditTodo} />
     </ThemeProvider>
   
   );
