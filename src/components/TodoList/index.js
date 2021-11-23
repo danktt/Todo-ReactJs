@@ -29,25 +29,25 @@ function TodoList({ todos, setTodos, setEditTodo }) {
   }
 
   const handleDelete = ({id}) => {
-    setTodos(todos.filter((todo) => todo.id === id))
+    setTodos(todos.filter((todo) => todo.id !== id))
   }
 
 
   return (
     <Div>
-      {todos.map(
-        (
-          todo //Esse é o map no qual para cada vez que eu clicar em add vai aparecer um novo input
-        ) => (
+      {todos.map((todo) => ( //Esse é o map no qual para cada vez que eu clicar em add vai aparecer um novo input
           <Li key={todo.id}>
             <Input
               type="text"
               value={todo.title}
               onChange={(event) => event.preventDefault()}
+              disabled="disabled"
             />
 
             <ButtonComplete onClick={() => handleComplete(todo)}> <FaCheck /> </ButtonComplete>
+
             <ButtonEdit onClick={() => handleEdit(todo)}><GrEdit /> </ButtonEdit>
+            
             <ButtonDelete onClick={() => handleDelete(todo)} > <FaTrashAlt /> </ButtonDelete>
           </Li>
         )
