@@ -42,9 +42,17 @@ function TodoList({ todos, setTodos, setEditTodo }) {
               value={todo.title}
               onChange={(event) => event.preventDefault()}
               disabled="disabled"
+              style={{
+                textDecoration: todo.completed ? "line-through" : null
+              }}
             />
 
-            <ButtonComplete onClick={() => handleComplete(todo)}> <FaCheck /> </ButtonComplete>
+            <ButtonComplete 
+              onClick={() => handleComplete(todo)}
+              style={{
+              background: todo.completed ? "#60D394" : null
+              }}
+            > <FaCheck /> </ButtonComplete>
 
             <ButtonEdit onClick={() => handleEdit(todo)}><GrEdit /> </ButtonEdit>
             

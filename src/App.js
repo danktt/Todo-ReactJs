@@ -14,7 +14,7 @@ import TodoList from "./components/TodoList";
 function App() {
 
   const initialState = JSON.parse(localStorage.getItem("todos")) || []
-  const [ input, setInput ] = useState("")
+  const [ input, setInput ] = useState("") // Estado inicial o form
   const [ todos, setTodos ] = useState(initialState) // state das divs que iram aparecer na tela 
   const [ editTodo, setEditTodo] = useState(null)
 
@@ -27,6 +27,8 @@ function App() {
 
 
 
+  
+
   // Function de Troca
   // test line
   const toggleTheme = () => {
@@ -35,6 +37,7 @@ function App() {
 
   const toggleIcon = theme.title === "light" ? <BsFillMoonFill /> : <BsFillSunFill />
 
+    
   return (
     <ThemeProvider theme={theme}>
       <Home toggleTheme={toggleTheme} icon={toggleIcon} />
