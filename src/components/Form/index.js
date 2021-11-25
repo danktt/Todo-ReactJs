@@ -26,6 +26,8 @@ function Form({input, setInput, todos, setTodos, editTodo, setEditTodo}) {
   
   }
 
+  
+
   // const onClick = (setInput) => { // CONTINUA AQUI 
   //   if(input) 
   // }
@@ -45,7 +47,7 @@ function Form({input, setInput, todos, setTodos, editTodo, setEditTodo}) {
   console.log(onInputChange)
 
   return (
-    <FormRoot onSubmit={onFormSubmit} >
+    <FormRoot onSubmit={onFormSubmit}  >
       <input 
         type="text" 
         placeholder="  What do you want to do?"
@@ -54,7 +56,7 @@ function Form({input, setInput, todos, setTodos, editTodo, setEditTodo}) {
         onChange={onInputChange}
         />
 
-      <button type="submit"> {editTodo ? "Ok" : "Add"}</button>
+      <button type="submit" > {editTodo ? "Ok" : "Add"}</button>
 
       
     </FormRoot>

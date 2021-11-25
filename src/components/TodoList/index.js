@@ -9,7 +9,7 @@ import {
   ButtonDelete,
 } from "./styles";
 
-function TodoList({ todos, setTodos, setEditTodo }) {
+function TodoList({ todos, setTodos, setEditTodo, setSelected }) {
 
   const handleComplete = (todo) => { // Vai marcar como completado a task
     setTodos(

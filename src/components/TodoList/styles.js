@@ -14,6 +14,9 @@ export const Div = styled.div`
   border-radius: .3rem .3rem 0 0; 
   
   margin-top: 2rem;
+
+  
+  
 `
 export const Li = styled.li`
   list-style-type: none;
