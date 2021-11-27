@@ -21,15 +21,34 @@ function App() {
 
   const [ theme, setTheme ] = usePersistedState("Capivara",light) //Aqui só guarda o estado inicial
 
-  const [ selected, setSelected ] = useState([])
+  const [ status, setStatus ] = useState("All")
+
+  const [ filteredTodos, setFilteredTodos ] = useState([])
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos))
   }, [todos]);
 
+  useEffect(() => {
+    filterHandler();
+  }, [todos,status])
 
-
+  const filterHandler = () => {
+    switch (status) {
+      case 'Completed':
+        setFilteredTodos(todos.filter(todo => todo.completed === true));
+        break;
+      case 'Active':
+        setFilteredTodos(todos.filter(todo => todo.completed === false));
+        break;
+      default:
+        setFilteredTodos(todos);
+        break;
+    }
   
+  }
+
+
 
   // Function de Troca
   // test line
@@ -41,20 +60,11 @@ function App() {
 
   const couterTodos = todos.length;
   
-  const isSelected = todos;
-    switch (isSelected) {
-      case 'All':
-        
-        break;
-      case 'Active':
+  
 
-        break;
-      case 'Completed':
-        
-        break;
-      default:
-
-
+  const statusHandler = (event) => {
+    setStatus(event.target.value) 
+  }
 
   
     return (
@@ -76,7 +86,7 @@ function App() {
               todos={todos} 
               setTodos={setTodos} 
               setEditTodo={setEditTodo}
-              setSelected={setSelected}
+              filteredTodos={filteredTodos}
               />
 
      
@@ -87,9 +97,9 @@ function App() {
         </div>
 
         <div className="SelectedButtons">
-          <button>All</button>
-          <button>Active</button>
-          <button>Completed</button>
+          <button onClick={statusHandler} value="All" >All</button>
+          <button onClick={statusHandler} value="Active">Active</button>
+          <button onClick={statusHandler} value="Completed">Completed</button>
         </div>
 
 

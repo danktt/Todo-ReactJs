@@ -9,7 +9,7 @@ import {
   ButtonDelete,
 } from "./styles";
 
-function TodoList({ todos, setTodos, setEditTodo, setSelected }) {
+function TodoList({ todos, setTodos, setEditTodo, filteredTodos }) {
 
   const handleComplete = (todo) => { // Vai marcar como completado a task
     setTodos(
@@ -35,7 +35,7 @@ function TodoList({ todos, setTodos, setEditTodo, setSelected }) {
 
   return (
     <Div>
-      {todos.map((todo) => ( //Esse é o map no qual para cada vez que eu clicar em add vai aparecer um novo input
+      {filteredTodos.map((todo) => ( //Esse é o map no qual para cada vez que eu clicar em add vai aparecer um novo input
           <Li key={todo.id}>
             <Input
               type="text"
