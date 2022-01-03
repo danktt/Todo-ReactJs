@@ -9,7 +9,7 @@ export const Div = styled.div`
   margin: auto;
   max-width: 1000px;
   align-items: center;
-  background: #333;
+  
 
   border-radius: .3rem .3rem 0 0; 
   
@@ -29,15 +29,16 @@ export const Li = styled.li`
 export const Input = styled.input` 
   width: 796px;
   height: 3rem; 
-  background: aqua;
+  background: ${props => props.theme.colors.background };
   border: none;
   font-size: 1.4rem;
 
-  border-bottom: 1px solid #333;
+  /* border-bottom: 1px solid #333; */
   border-radius: .3rem;
 
   margin-top: 0.2rem;
   
+  /* text-align: center; */
 
 
 `
@@ -53,6 +54,11 @@ export const ButtonComplete = styled.button`
   justify-content: center;
   background: #EE6055;
   cursor: pointer;
+  transition: .2s;
+
+  &:hover{
+    filter: brightness(.8)
+  }
 `  
 
 export const ButtonEdit = styled.button`
@@ -66,6 +72,11 @@ export const ButtonEdit = styled.button`
   justify-content: center;
   background: #FFD97D;
   cursor: pointer;
+  transition: .2s;
+
+  &:hover{
+    filter: brightness(.8)
+  }
 
 `
 export const ButtonDelete = styled.button`
@@ -77,8 +88,13 @@ export const ButtonDelete = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #60D394;
+  background: ${props => props.theme.colors.backgroundButtonSelected };
   cursor: pointer;
+  transition: .2s;
+
+  &:hover{
+    filter: brightness(.8)
+  }
 
 
 

@@ -102,8 +102,6 @@ function App() {
           <button onClick={statusHandler} value="Completed">Completed</button>
         </div>
 
-
-
       </div>
     </ThemeProvider>
   

@@ -26,12 +26,6 @@ function Form({input, setInput, todos, setTodos, editTodo, setEditTodo}) {
   
   }
 
-  
-
-  // const onClick = (setInput) => { // CONTINUA AQUI 
-  //   if(input) 
-  // }
-
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -44,7 +38,6 @@ function Form({input, setInput, todos, setTodos, editTodo, setEditTodo}) {
   }
 
 
-  console.log(onInputChange)
 
   return (
     <FormRoot onSubmit={onFormSubmit}  >

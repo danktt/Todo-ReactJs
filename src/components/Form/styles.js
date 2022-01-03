@@ -8,7 +8,7 @@ export const FormRoot = styled.form`
   margin: auto;
   /* background: yellow; */
   margin-top: -8rem;
-
+  margin-bottom: 3rem;
 
   input {
     height : 3rem;
@@ -31,7 +31,11 @@ export const FormRoot = styled.form`
 
     background: ${props => props.theme.colors.backgroundButton};;
     
-    
+    transition: .2s;
+
+        &:hover{
+          filter: brightness(.8)
+        }
   }
 
 
