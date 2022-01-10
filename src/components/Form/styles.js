@@ -18,6 +18,7 @@ export const FormRoot = styled.form`
     width: 700px;
     color: ${props => props.theme.colors.text};
     font-size: 1.4rem;
+    padding: .3rem;
   }
 
   button {

@@ -33,12 +33,12 @@ export const Input = styled.input`
   border: none;
   font-size: 1.4rem;
 
-  /* border-bottom: 1px solid #333; */
-  border-radius: .3rem;
-
-  margin-top: 0.2rem;
   
-  /* text-align: center; */
+  border-radius: .3rem;
+  color: ${props => props.theme.colors.text };
+  margin-top: 0.2rem;
+  padding: .3rem;
+
 
 
 `

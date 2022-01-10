@@ -1,14 +1,14 @@
-export default {
+export  default {
   title: "light",
 
   colors: {
     primary: "#38AECC",
     secondary: "#FCFFFD",
 
-    background: "#E9F1F7",
-    backgroundStrong: "#e9dfdf",
+    background: "#7CA5B8",
+    backgroundStrong: "#D6EDFF",
     backgroundButtonSelected: "#7569f1",
-    backgroundButton: "#E9F1F7",
+    backgroundButton: "#FCFFFD",
 
     text: "#333",
   },

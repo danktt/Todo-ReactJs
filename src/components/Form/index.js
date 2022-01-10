@@ -29,11 +29,13 @@ function Form({input, setInput, todos, setTodos, editTodo, setEditTodo}) {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    if(!editTodo){
-      setTodos([...todos, {id: uuidv4(), title: input, completed: false}]);
-      setInput("") 
-    } else {
-      updateTodo(input, editTodo.id, editTodo.completed)
+    if(input !== ""){
+      if(!editTodo){
+        setTodos([...todos, {id: uuidv4(), title: input, completed: false}]);
+        setInput("") 
+      } else {
+        updateTodo(input, editTodo.id, editTodo.completed)
+      }
     }
   }
 

@@ -7,7 +7,6 @@ export const Header = styled.header`
 
   div {
     max-width: 1000px;
-    // background: aqua;
     margin: auto;
     height: 300px;
     display: flex;
